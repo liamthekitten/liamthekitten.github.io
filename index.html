@@ -1,106 +1,125 @@
-# liamthekitten.github.io
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Liamkittenlover – My Future & Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiamTheKitten – My Future & Computer Science Learning</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #fafafa;
-      color: #333;
       margin: 0;
-      padding: 0;
+      background-color: #1b1b1b; /* dark background */
+      color: #ffffff;           /* white text */
+      font-family: 'Segoe UI', Arial, sans-serif; /* modern font */
+      line-height: 1.6;
     }
     header {
-      background-color: #d9c2f0; /* light purple */
-      color: #4b0082; /* deep purple accent */
-      padding: 20px;
+      background-color: #4b0082; /* deep purple */
+      padding: 40px 20px;
       text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      color: #ffffff;
     }
     main {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    section {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
     }
     h2 {
-      color: #4b0082;
+      color: #b48eff; /* lighter purple accent */
+      border-bottom: 2px solid #4b0082;
+      padding-bottom: 5px;
     }
-    img, iframe {
+    figure {
+      margin: 20px 0;
+      text-align: center;
+    }
+    figure img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    figcaption {
+      font-size: 0.9em;
+      color: #dddddd;
+      margin-top: 5px;
+    }
+    iframe {
       width: 100%;
-      border-radius: 6px;
+      height: 315px;
+      border: none;
+      border-radius: 8px;
     }
     a {
-      color: #4b0082;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f0e6fa;
-      color: #4b0082;
+      color: #b48eff;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>liamkittenlover</h1>
+  <h1>LiamTheKitten</h1>
 </header>
 
 <main>
-  <!-- Left column -->
   <section>
     <h2>My Future Plans</h2>
     <p>
-      After high school, I want to <strong>study psychology</strong>.  
-      I’m excited to explore topics like <em>behavior</em>, <em>cognition</em>, 
-      and how people interact with their <em>environment</em>.
-    </p>
-
-    <h2>Vocabulary Highlights</h2>
-    <p>
-      From Unit 1 and Unit 2, I’ve learned words like 
-      <strong>collaboration</strong>, <strong>innovation</strong>, 
-      <strong>network</strong>, and <strong>analysis</strong>—all of which 
-      connect to understanding how people learn and communicate.
+      After high school, I plan to <strong>study psychology</strong>.  
+      Understanding the mind and behavior connects with concepts like 
+      <em>data</em>, <em>analysis</em>, and how humans process 
+      <em>information</em>.
     </p>
   </section>
 
-  <!-- Right column -->
   <section>
-    <h2>Visual Connections</h2>
+    <h2>Unit 1: Data Concepts</h2>
+    <p>
+      I’ve learned that a <strong>bit</strong> is a binary digit (0 or 1) and 
+      a <strong>byte</strong> is a group of 8 bits. Data can suffer 
+      <strong>roundoff</strong> errors when not enough bits are used, and 
+      <strong>analog data</strong> changes smoothly over time.  
+      Compression can be <strong>lossless</strong> (perfect recovery) or 
+      <strong>lossy</strong> (some data lost).  
+      <strong>Metadata</strong> provides information about other data, like 
+      details about a file or database record.
+    </p>
     <figure>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Brain_icon.svg/512px-Brain_icon.svg.png" alt="Brain icon for psychology">
-      <figcaption>Psychology and the science of the mind (Unit 1)</figcaption>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Binary-code.jpg/640px-Binary-code.jpg" 
+           alt="Binary code representing bits and bytes">
+      <figcaption>Binary data representation – bits and bytes</figcaption>
     </figure>
-    <figure>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Internet_map_1024.jpg/512px-Internet_map_1024.jpg" alt="Internet map">
-      <figcaption>Networks and global communication (Unit 2)</figcaption>
-    </figure>
+  </section>
 
+  <section>
+    <h2>Unit 2: Computer Systems & Networks</h2>
+    <p>
+      A <strong>computing device</strong> is any physical machine that can run 
+      programs. Devices form a <strong>computer network</strong> to share data.  
+      Data travels along a <strong>path</strong> and follows a 
+      <strong>protocol</strong> of communication rules.  
+      The Internet is <strong>fault tolerant</strong> and designed for 
+      <strong>scalability</strong>.  
+      Key ideas include <strong>bandwidth</strong>, unique 
+      <strong>IP addresses</strong>, and the use of 
+      <strong>packets</strong> routed across networks using 
+      <strong>TCP</strong>, <strong>UDP</strong>, and the 
+      <strong>Domain Name System (DNS)</strong>.
+    </p>
+    <figure>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Internet_map.jpg/640px-Internet_map.jpg" 
+           alt="Visualization of global computer network">
+      <figcaption>Global computer networks connecting billions of devices</figcaption>
+    </figure>
+  </section>
+
+  <section>
     <h2>Video: How the Internet Works</h2>
-    <iframe height="250" src="https://www.youtube.com/embed/7_LPdttKXPc" 
-            title="How the Internet Works" 
-            frameborder="0" 
-            allowfullscreen>
-    </iframe>
+    <iframe src="https://www.youtube.com/embed/7_LPdttKXPc" 
+            title="How the Internet Works" allowfullscreen></iframe>
   </section>
 </main>
 
-<footer>
-  © 2025 liamkittenlover
-</footer>
-
 </body>
 </html>
-
