@@ -3,38 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LiamTheKitten – My Future & Computer Science Learning</title>
+  <title>LiamTheKitten – My Future & Brain Game</title>
   <style>
+    /* ---------- GLOBAL ---------- */
     body {
       margin: 0;
-      background-color: #1b1b1b; /* dark background */
-      color: #ffffff;           /* white text */
-      font-family: 'Segoe UI', Arial, sans-serif; /* modern font */
+      background-color: #1b1b1b;
+      color: #ffffff;
+      font-family: 'Segoe UI', Arial, sans-serif;
       line-height: 1.6;
     }
     header {
-      background-color: #4b0082; /* deep purple */
+      background-color: #4b0082;
       padding: 40px 20px;
       text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     }
     header h1 {
       margin: 0;
-      font-size: 2.5em;
-      color: #ffffff;
+      font-size: 2.8em;
     }
     main {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 30px auto;
       padding: 0 20px;
     }
     h2 {
-      color: #b48eff; /* lighter purple accent */
+      color: #b48eff;
       border-bottom: 2px solid #4b0082;
       padding-bottom: 5px;
     }
-    figure {
-      margin: 20px 0;
-      text-align: center;
+    section {
+      margin-bottom: 40px;
     }
     figure img {
       max-width: 100%;
@@ -45,14 +45,72 @@
       color: #dddddd;
       margin-top: 5px;
     }
-    iframe {
-      width: 100%;
-      height: 315px;
-      border: none;
-      border-radius: 8px;
+    a { color: #b48eff; }
+
+    /* ---------- BRAIN GAME ---------- */
+    .game-container {
+      background: #242424;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      text-align: center;
     }
-    a {
-      color: #b48eff;
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 100px);
+      grid-gap: 15px;
+      justify-content: center;
+      margin: 20px auto;
+    }
+    .card {
+      width: 100px;
+      height: 100px;
+      background: #4b0082;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: 2em;
+      font-weight: bold;
+      color: #ffffff;
+      user-select: none;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.4s;
+    }
+    .card.flip { transform: rotateY(180deg); }
+    .card .front, .card .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+    }
+    .card .front {
+      background: #4b0082;
+    }
+    .card .back {
+      background: #b48eff;
+      transform: rotateY(180deg);
+      color: #1b1b1b;
+      font-size: 1.8em;
+    }
+    #reset-btn {
+      background: #b48eff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      color: #1b1b1b;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #reset-btn:hover {
+      background: #d2b8ff;
     }
   </style>
 </head>
@@ -63,6 +121,7 @@
 </header>
 
 <main>
+  <!-- Existing Sections -->
   <section>
     <h2>My Future Plans</h2>
     <p>
@@ -80,16 +139,10 @@
       a <strong>byte</strong> is a group of 8 bits. Data can suffer 
       <strong>roundoff</strong> errors when not enough bits are used, and 
       <strong>analog data</strong> changes smoothly over time.  
-      Compression can be <strong>lossless</strong> (perfect recovery) or 
-      <strong>lossy</strong> (some data lost).  
-      <strong>Metadata</strong> provides information about other data, like 
-      details about a file or database record.
+      Compression can be <strong>lossless</strong> or 
+      <strong>lossy</strong>.  
+      <strong>Metadata</strong> provides information about other data.
     </p>
-    <figure>
-      <img src="brain.jpg" 
-           alt="Binary code representing bits and bytes">
-      <figcaption>Binary data representation – bits and bytes</figcaption>
-    </figure>
   </section>
 
   <section>
@@ -98,28 +151,92 @@
       A <strong>computing device</strong> is any physical machine that can run 
       programs. Devices form a <strong>computer network</strong> to share data.  
       Data travels along a <strong>path</strong> and follows a 
-      <strong>protocol</strong> of communication rules.  
+      <strong>protocol</strong>.  
       The Internet is <strong>fault tolerant</strong> and designed for 
-      <strong>scalability</strong>.  
-      Key ideas include <strong>bandwidth</strong>, unique 
-      <strong>IP addresses</strong>, and the use of 
-      <strong>packets</strong> routed across networks using 
-      <strong>TCP</strong>, <strong>UDP</strong>, and the 
-      <strong>Domain Name System (DNS)</strong>.
+      <strong>scalability</strong>.
     </p>
-    <figure>
-      <img src="psych.webp" 
-           alt="Visualization of global computer network">
-      <figcaption>Global computer networks connecting billions of devices</figcaption>
-    </figure>
   </section>
 
   <section>
     <h2>Video: How the Internet Works</h2>
-    <iframe src="https://www.youtube.com/embed/7_LPdttKXPc" 
-            title="How the Internet Works" allowfullscreen></iframe>
+    <iframe width="100%" height="315"
+      src="https://www.youtube.com/embed/7_LPdttKXPc"
+      title="How the Internet Works" allowfullscreen>
+    </iframe>
+  </section>
+
+  <!-- NEW BRAIN GAME -->
+  <section>
+    <h2>Brain Game – Memory Match</h2>
+    <div class="game-container">
+      <p>Flip the cards to find matching pairs. Test your memory!</p>
+      <div class="game-grid" id="gameGrid"></div>
+      <button id="reset-btn">Restart Game</button>
+    </div>
   </section>
 </main>
+
+<script>
+  const icons = ['🧠','⚡','🎯','💡','🔮','📊','🔎','🧩'];
+  let cardValues = [...icons, ...icons];
+  const grid = document.getElementById('gameGrid');
+  const resetBtn = document.getElementById('reset-btn');
+  let flippedCards = [];
+  let lock = false;
+
+  function shuffle(array){
+    for (let i=array.length-1; i>0; i--){
+      const j = Math.floor(Math.random()* (i+1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  function createCard(icon){
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="front"></div>
+      <div class="back">${icon}</div>
+    `;
+    card.addEventListener('click', ()=>flipCard(card, icon));
+    return card;
+  }
+
+  function setupGame(){
+    grid.innerHTML = '';
+    flippedCards = [];
+    lock = false;
+    shuffle(cardValues).forEach(icon=>{
+      grid.appendChild(createCard(icon));
+    });
+  }
+
+  function flipCard(card, icon){
+    if (lock || card.classList.contains('flip')) return;
+    card.classList.add('flip');
+    flippedCards.push({card, icon});
+
+    if (flippedCards.length === 2){
+      lock = true;
+      const [first, second] = flippedCards;
+      if (first.icon === second.icon){
+        flippedCards = [];
+        lock = false;
+      } else {
+        setTimeout(()=>{
+          first.card.classList.remove('flip');
+          second.card.classList.remove('flip');
+          flippedCards = [];
+          lock = false;
+        }, 900);
+      }
+    }
+  }
+
+  resetBtn.addEventListener('click', setupGame);
+  setupGame();
+</script>
 
 </body>
 </html>
