@@ -1,122 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LiamTheKitten – Psychology & Brain Game</title>
-  <style>
-    /* ---------- GLOBAL ---------- */
-    body {
-      margin: 0;
-      background-color: #1b1b1b;
-      color: #ffffff;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      line-height: 1.6;
-    }
-    header {
-      background-color: #4b0082;
-      padding: 40px 20px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.8em;
-    }
-    main {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-    h2 {
-      color: #b48eff;
-      border-bottom: 2px solid #4b0082;
-      padding-bottom: 5px;
-    }
-    section {
-      margin-bottom: 50px;
-    }
-    figure {
-      margin: 25px 0;
-      text-align: center;
-    }
-    figure img {
-      max-width: 90%;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-    figcaption {
-      font-size: 0.9em;
-      color: #cccccc;
-      margin-top: 6px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LiamTheKitten – Psychology, Smart Homes & Brain Game</title>
+<style>
+/* ---------- GLOBAL ---------- */
+body{
+  margin:0;
+  background:#1b1b1b;
+  color:#ffffff;
+  font-family:'Segoe UI',Arial,sans-serif;
+  line-height:1.6;
+}
+header{
+  background:#4b0082;
+  padding:40px 20px;
+  text-align:center;
+  box-shadow:0 4px 8px rgba(0,0,0,0.4);
+}
+header h1{margin:0;font-size:2.8em;}
+main{max-width:1100px;margin:30px auto;padding:0 20px;}
+h2{
+  color:#b48eff;
+  border-bottom:2px solid #4b0082;
+  padding-bottom:5px;
+}
+section{margin-bottom:50px;}
+figure{text-align:center;margin:25px 0;}
+figure img{
+  max-width:90%;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.5);
+}
+figcaption{font-size:0.9em;color:#cccccc;margin-top:6px;}
+ul.vocab{list-style:none;padding-left:0;}
+ul.vocab li{margin:8px 0;padding-left:0;}
+ul.vocab strong{color:#b48eff;}
 
-    /* ---------- BRAIN GAME ---------- */
-    .game-container {
-      background: #242424;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      text-align: center;
-    }
-    .game-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 100px);
-      grid-gap: 15px;
-      justify-content: center;
-      margin: 20px auto;
-    }
-    .card {
-      width: 100px;
-      height: 100px;
-      background: #4b0082;
-      border-radius: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      font-size: 2em;
-      font-weight: bold;
-      color: #ffffff;
-      user-select: none;
-      position: relative;
-      transform-style: preserve-3d;
-      transition: transform 0.4s;
-    }
-    .card.flip { transform: rotateY(180deg); }
-    .card .front, .card .back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 10px;
-    }
-    .card .front {
-      background: #4b0082;
-    }
-    .card .back {
-      background: #b48eff;
-      transform: rotateY(180deg);
-      color: #1b1b1b;
-      font-size: 1.8em;
-    }
-    #reset-btn {
-      background: #b48eff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      color: #1b1b1b;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    #reset-btn:hover {
-      background: #d2b8ff;
-    }
-  </style>
+/* ---------- BRAIN GAME ---------- */
+.game-container{
+  background:#242424;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 0 20px rgba(0,0,0,0.5);
+  text-align:center;
+}
+.game-grid{
+  display:grid;
+  grid-template-columns:repeat(4,100px);
+  grid-gap:15px;
+  justify-content:center;
+  margin:20px auto;
+}
+.card{
+  width:100px;height:100px;
+  background:#4b0082;
+  border-radius:10px;
+  display:flex;justify-content:center;align-items:center;
+  cursor:pointer;font-size:2em;font-weight:bold;color:#ffffff;
+  user-select:none;position:relative;
+  transform-style:preserve-3d;
+  transition:transform 0.4s;
+}
+.card.flip{transform:rotateY(180deg);}
+.card .front,.card .back{
+  position:absolute;width:100%;height:100%;
+  backface-visibility:hidden;
+  display:flex;justify-content:center;align-items:center;
+  border-radius:10px;
+}
+.card .front{background:#4b0082;}
+.card .back{
+  background:#b48eff;
+  transform:rotateY(180deg);
+  color:#1b1b1b;
+  font-size:1.8em;
+}
+#reset-btn{
+  background:#b48eff;
+  border:none;
+  padding:10px 20px;
+  border-radius:6px;
+  color:#1b1b1b;
+  font-size:1em;
+  cursor:pointer;
+  transition:background 0.3s;
+}
+#reset-btn:hover{background:#d2b8ff;}
+</style>
 </head>
 <body>
 
@@ -135,7 +107,7 @@
       <em>information</em>.
     </p>
     <figure>
-      <img src="brain.jpg" 
+      <img src="https://images.unsplash.com/photo-1517070208541-6ddc4d3efbcb?auto=format&fit=crop&w=1100&q=80" 
            alt="Brain concept">
       <figcaption>A creative brain illustration representing human thought and memory.</figcaption>
     </figure>
@@ -152,7 +124,7 @@
       <strong>Metadata</strong> provides information about other data.
     </p>
     <figure>
-      <img src="psych.webp"
+      <img src="https://images.unsplash.com/photo-1600269452121-4e4df97891a6?auto=format&fit=crop&w=1100&q=80"
            alt="Psychology data">
       <figcaption>Psychology often uses data to study patterns in behavior.</figcaption>
     </figure>
@@ -170,10 +142,51 @@
       <strong>scalability</strong>.
     </p>
     <figure>
-      <img src="brain.jpg" 
+      <img src="https://images.unsplash.com/photo-1604079628043-d3b2c7f9ab0b?auto=format&fit=crop&w=1100&q=80" 
            alt="Brain network">
       <figcaption>Networks resemble the way neurons communicate in the brain.</figcaption>
     </figure>
+  </section>
+
+  <!-- NEW Smart Homes -->
+  <section>
+    <h2>Smart Homes – Psychology Meets Technology</h2>
+    <p>
+      Smart homes use <strong>computing devices</strong> like thermostats, lights, 
+      and security systems that communicate through a <strong>computer network</strong>.  
+      Sensors collect <strong>analog data</strong> such as temperature or motion, 
+      convert it to digital <strong>bits</strong>, and share it using Internet 
+      <strong>protocols</strong>.  
+      These systems are designed for <strong>fault tolerance</strong> so your lights 
+      still work even if one device fails, and for <strong>scalability</strong> so 
+      you can easily add new smart gadgets.  
+      Understanding human behavior helps design smart homes that are intuitive and 
+      support psychological well-being—like lighting that matches your daily rhythm.
+    </p>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1586105251261-72a756497a12?auto=format&fit=crop&w=1100&q=80"
+           alt="Modern smart home">
+      <figcaption>A modern smart home uses networks of devices to automate daily life.</figcaption>
+    </figure>
+  </section>
+
+  <!-- NEW Vocabulary -->
+  <section>
+    <h2>Key Vocabulary from Unit 1 & 2</h2>
+    <div style="background:#242424;padding:20px;border-radius:12px;box-shadow:0 0 20px rgba(0,0,0,0.5);">
+      <ul class="vocab">
+        <li><strong>Bit:</strong> A single binary digit (0 or 1).</li>
+        <li><strong>Byte:</strong> A group of 8 bits.</li>
+        <li><strong>Metadata:</strong> Data describing other data (like a photo’s size).</li>
+        <li><strong>Lossless Compression:</strong> Reduces file size without losing data.</li>
+        <li><strong>Lossy Compression:</strong> Reduces size by discarding some data.</li>
+        <li><strong>Computing Device:</strong> Physical machine that runs programs.</li>
+        <li><strong>Computer Network:</strong> Interconnected devices that share data.</li>
+        <li><strong>Protocol:</strong> Rules for how systems communicate.</li>
+        <li><strong>Fault Tolerant:</strong> Keeps working even if parts fail.</li>
+        <li><strong>Scalability:</strong> Ability of a system to grow or shrink to meet demand.</li>
+      </ul>
+    </div>
   </section>
 
   <!-- Video -->
@@ -189,7 +202,7 @@
   <section>
     <h2>Brain Game – Memory Match</h2>
     <figure>
-      <img src="psych.webp" 
+      <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1100&q=80" 
            alt="Brain puzzle">
       <figcaption>Sharpen your memory with this fun brain game!</figcaption>
     </figure>
@@ -202,65 +215,50 @@
 </main>
 
 <script>
-  const icons = ['🧠','⚡','🎯','💡','🔮','📊','🔎','🧩'];
-  let cardValues = [...icons, ...icons];
-  const grid = document.getElementById('gameGrid');
-  const resetBtn = document.getElementById('reset-btn');
-  let flippedCards = [];
-  let lock = false;
+const icons=['🧠','⚡','🎯','💡','🔮','📊','🔎','🧩'];
+let cardValues=[...icons,...icons];
+const grid=document.getElementById('gameGrid');
+const resetBtn=document.getElementById('reset-btn');
+let flippedCards=[],lock=false;
 
-  function shuffle(array){
-    for (let i=array.length-1; i>0; i--){
-      const j = Math.floor(Math.random()* (i+1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+function shuffle(array){
+  for(let i=array.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [array[i],array[j]]=[array[j],array[i]];
   }
-
-  function createCard(icon){
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-      <div class="front"></div>
-      <div class="back">${icon}</div>
-    `;
-    card.addEventListener('click', ()=>flipCard(card, icon));
-    return card;
-  }
-
-  function setupGame(){
-    grid.innerHTML = '';
-    flippedCards = [];
-    lock = false;
-    shuffle(cardValues).forEach(icon=>{
-      grid.appendChild(createCard(icon));
-    });
-  }
-
-  function flipCard(card, icon){
-    if (lock || card.classList.contains('flip')) return;
-    card.classList.add('flip');
-    flippedCards.push({card, icon});
-
-    if (flippedCards.length === 2){
-      lock = true;
-      const [first, second] = flippedCards;
-      if (first.icon === second.icon){
-        flippedCards = [];
-        lock = false;
-      } else {
-        setTimeout(()=>{
-          first.card.classList.remove('flip');
-          second.card.classList.remove('flip');
-          flippedCards = [];
-          lock = false;
-        }, 900);
-      }
+  return array;
+}
+function createCard(icon){
+  const card=document.createElement('div');
+  card.className='card';
+  card.innerHTML=`<div class="front"></div><div class="back">${icon}</div>`;
+  card.addEventListener('click',()=>flipCard(card,icon));
+  return card;
+}
+function setupGame(){
+  grid.innerHTML='';
+  flippedCards=[];lock=false;
+  shuffle(cardValues).forEach(icon=>grid.appendChild(createCard(icon)));
+}
+function flipCard(card,icon){
+  if(lock||card.classList.contains('flip'))return;
+  card.classList.add('flip');
+  flippedCards.push({card,icon});
+  if(flippedCards.length===2){
+    lock=true;
+    const [first,second]=flippedCards;
+    if(first.icon===second.icon){flippedCards=[];lock=false;}
+    else{
+      setTimeout(()=>{
+        first.card.classList.remove('flip');
+        second.card.classList.remove('flip');
+        flippedCards=[];lock=false;
+      },900);
     }
   }
-
-  resetBtn.addEventListener('click', setupGame);
-  setupGame();
+}
+resetBtn.addEventListener('click',setupGame);
+setupGame();
 </script>
 
 </body>
